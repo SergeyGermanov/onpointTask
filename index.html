@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>Onpoint Task</title>
+</head>
+
+<body>
+    <nav id="rightSlideChanger">
+        <a class="slideChangeDots dotWhite dotOrange" href="#section1"></a>
+        <a class="slideChangeDots dotWhite" href="#section2"></a>
+        <a class="slideChangeDots dotWhite" href="#slide-x"></a>
+    </nav>
+    <section class="section1" id="section1">
+
+        <div class="box1">
+
+            <img src="./src/imgs/slide1/slide1-1024.jpg" alt="slide #1">
+            <div class="btn1">
+                <img src="./src/imgs/slide1/downBtn.png" alt="button to go down">
+            </div>
+        </div>
+        <div id="redDots">
+            <span id="summitGipo" class="dot"></span>
+            <span id="summitCD" class="dot"></span>
+            <span id="summitHbA1c" class="dot"></span>
+            <span id="summitCC" class="dot"></span>
+        </div>
+
+    </section>
+    <section class="section2" id="section2">
+        <div class="box2">
+            <img src="./src/imgs/slide2/slide2-1024.jpg" alt="slide #2">
+            <div class="btn2">
+                <img src="./src/imgs/slide2/downBtn.png" alt="button to go down">
+            </div>
+        </div>
+
+    </section>
+    <section class="slide-x" id="slide-x">
+
+
+        <div class="slider-wrap">
+            <input type="range" id="rangeSlider" min='0' max="30" step="1" value="30">
+            <div class="input-labels">
+                <span>1998</span>
+                <span>2009</span>
+                <span>2016</span>
+            </div>
+            <div class="slider" id="slider">
+                <div class="holder">
+                    <div class="slide" id="slide-0"></div>
+                    <div class="slide" id="slide-1"></div>
+                    <div class="slide" id="slide-2"></div>
+                </div>
+            </div>
+
+        </div>
+        <nav class="slider-nav">
+            <a id="slider-nav-0" href="#slide-0">Slide 0</a>
+            <a id="slider-nav-1" href="#slide-1">Slide 1</a>
+            <a id="slider-nav-2" href="#slide-2">Slide 2</a>
+        </nav>
+    </section>
+
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>

@@ -14,9 +14,10 @@
 - #### babel(ES6, ES7, ES8)
 - #### Vanilla JS
 - #### BEM naming convention
-- #### Git (Git BASH termonal)
+- #### Git (Git BASH terminal)
 
 Visual Studio Code was used as an IDE.
 
 Here you can see the results:
-![Screenshot of the result](https://youtu.be/bH9zEDcMlBA)
+![Screenshot of the result](https://github.com/SergeyGermanov/onpointTask/blob/master/slider-1.jpg?raw=true)
+![Screenshot of the result](https://github.com/SergeyGermanov/onpointTask/blob/master/slider-2.jpg?raw=true)

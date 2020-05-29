@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=720, maximum-scale=1.0">
+    <meta name="viewport" content="width=1024, maximum-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
     <title>Onpoint Task</title>
 </head>
@@ -12,29 +12,30 @@
 
     <!-- white anchor dots on right/ they change to orange when page scrolls down/up to a certain section -->
 
-    <nav id="rightSlideChanger">
-        <a class="slideChangeDots dotWhite dotOrange" href="#section1"></a>
-        <a class="slideChangeDots dotWhite" href="#section2"></a>
-        <a class="slideChangeDots dotWhite" href="#sectionX"></a>
+    <nav class="right-slider">
+        <a class="right-slider__dots right-slider__dots--white right-slider__dots--orange" href="#section1"></a>
+        <a class="right-slider__dots right-slider__dots--white" href="#section2"></a>
+        <a class="right-slider__dots right-slider__dots--white" href="#section-x"></a>
     </nav>
 
     <!-- section one with iceberg and animated red dots -->
     <section class="section1" id="section1">
 
         <!-- box containig the image of the first slide and image with the button after clicking which you are sent to section two  -->
-        <div class="box1">
-            <img src="./src/imgs/slide1/slide1-1024.jpg" alt="slide #1">
-            <div class="btn" id="btn1">
-                <img src="./src/imgs/slide1/downBtn.png" alt="button to go to section 2">
+        <div class="section1__box">
+            <img class="section1__box__img" src="./src/imgs/slide1/slide1-1024.jpg" alt="slide #1">
+            <div class="section1__box__btn" id="btn1">
+                <img class="section1__box__btn__img" src="./src/imgs/slide1/downBtn.png"
+                    alt="button to go to section 2">
             </div>
         </div>
 
         <!-- red animated dots on tops of each of four peaks -->
-        <div id="redDots">
-            <span id="summitGipo" class="dot"></span>
-            <span id="summitCD" class="dot"></span>
-            <span id="summitHbA1c" class="dot"></span>
-            <span id="summitCC" class="dot"></span>
+        <div class="red-dots">
+            <span class="red-dots__dot red-dots--gipo-position"></span>
+            <span class="red-dots__dot red-dots--cd-position"></span>
+            <span class="red-dots__dot red-dots--hbA1c-position"></span>
+            <span class="red-dots__dot red-dots--cc-position"></span>
         </div>
 
     </section>
@@ -43,37 +44,37 @@
     <section class="section2" id="section2">
 
         <!-- box two which contains the second slide and with the button after clicking which you are sent to section three -->
-        <div class="box2">
-            <img src="./src/imgs/slide2/slide2-1024.jpg" alt="slide #2">
-            <div class="btn" id="btn2">
-                <img src="./src/imgs/slide2/downBtn.png" alt="button to go down">
+        <div class="section2__box">
+            <img class="section2__box__img" src="./src/imgs/slide2/slide2-1024.jpg" alt="slide #2">
+            <div class="section2__box__btn" id="btn2">
+                <img class="section2__box__btn__img" src="./src/imgs/slide2/downBtn.png" alt="button to go down">
             </div>
         </div>
     </section>
 
     <!-- section three which contains a horizontal slider with three more slides. These slides can be directed to by range input slider insede this section -->
-    <section class="sectionX" id="sectionX">
+    <section class="section-x" id="section-x">
 
         <!-- slider div with slides, input, and labels -->
-        <div class="sliderWrap">
+        <div class="section-x__wrapper">
 
             <!-- range input to control the slides -->
-            <input type="range" id="rangeSlider" min='0' max="30" step="1" value="30">
+            <input type="range" class="section-x__wrapper__input" min='0' max="30" step="1" value="30">
 
 
             <!-- labels for the slider -->
-            <div class="inputLabels">
+            <div class="section-x__wrapper__labels">
                 <span>1998</span>
                 <span>2009</span>
                 <span>2016</span>
             </div>
 
             <!-- horizontal slider which contains the divs with slides -->
-            <div class="slider" id="slider">
-                <div class="holder">
-                    <div class="slide" id="slide0"></div>
-                    <div class="slide" id="slide1"></div>
-                    <div class="slide" id="slide2"></div>
+            <div class="section-x__wrapper__slider">
+                <div class="section-x__wrapper__slider__holder">
+                    <div class="holder__slide holder__slide--url-0" id="slide0"></div>
+                    <div class="holder__slide holder__slide--url-1" id="slide1"></div>
+                    <div class="holder__slide holder__slide--url-2" id="slide2"></div>
                 </div>
             </div>
 
@@ -81,10 +82,10 @@
 
         <!-- navigation liks to the last three slides. They cannot be seen  but they are clicked with the help of JavaScript
              when the range input changed to a particular position-->
-        <nav class="sliderNav">
-            <a id="sliderNav0" href="#slide0">Slide 0</a>
-            <a id="sliderNav1" href="#slide1">Slide 1</a>
-            <a id="sliderNav2" href="#slide2">Slide 2</a>
+        <nav class="section-x__slider-nav">
+            <a class="section-x__slider-nav__link-0" href="#slide0">Slide 0</a>
+            <a class="section-x__slider-nav__link-1" href="#slide1">Slide 1</a>
+            <a class="section-x__slider-nav__link-2" href="#slide2">Slide 2</a>
         </nav>
 
     </section>

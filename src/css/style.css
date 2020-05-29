@@ -4,11 +4,8 @@ body {
     padding: 0;
 }
 
-
-
-
 /* contaner for slides 1 and 2 styles */
-.box1, .box2{ 
+.section1__box, .section2__box{ 
     height: 100vh;
     background-color: rgb(94, 159, 233);
     display: flex;
@@ -17,16 +14,16 @@ body {
     position: relative;
 }
 
-.box2 {  
+.section2__box {  
   background-color:rgb(39, 81, 172);
 }
 
-.box1 > img, .box2 > img {
+.section1__box__img, .section2__box__img {
   height: 100%;
 }
 
 /* buttons from section 1 and 2 styles */
-.btn {
+.section1__box__btn, .section2__box__btn {
     height: 10.42vh;
     display: flex;
     justify-content: space-around;
@@ -38,17 +35,17 @@ body {
     opacity: 0.5;
 }
 
-.btn > img {
+.section1__box__btn__img, .section2__box__btn__img {
     height: 100%;
 }
 
-.btn:hover {
+.section1__box__btn:hover, .section2__box__btn:hover {
     opacity: 1;
 }
 
 /* styles for the animated red dots on the first slide */
 
-.dot {
+.red-dots__dot {
   position: absolute;
   height: 5px;
   width: 5px;
@@ -69,105 +66,120 @@ body {
       }
 }
 
-.dot:hover {
+.red-dots__dot:hover {
   cursor: pointer;
 }
 
 
 /* postitioning of red dot to the peaks on the first slide */
+.red-dots--gipo-position, .red-dots--cd-position, .red-dots--hbA1c-position, .red-dots--cc-position  {
+  position: absolute;
+}
+/* for Ipad screen */
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 1) {
    
-  #summitGipo {
-    position: absolute;
-    top: 435px;
-    left: 283px;
-}
+    .red-dots--gipo-position {
+        top: 435px;
+        left: 283px;
+    }
 
-#summitCD {
-    position: absolute;
-    top: 540px;
-    left: 482px;
-}
+    .red-dots--cd-position {
+        top: 540px;
+        left: 482px;
+    }
 
-#summitHbA1c {
-    position: absolute;
-    top: 280px;
-    left: 585px;
-}
-  
-#summitCC {
-    position: absolute;
-    top: 520px;
-    left: 826px;
-}
+    .red-dots--hbA1c-position {
+        top: 280px;
+        left: 585px;
+    }
+      
+    .red-dots--cc-position {
+        top: 520px;
+        left: 826px;
+    }
 }
 
  
-
+/* for Laptop screens screen */
 @media screen 
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
 
-   
-  #summitGipo {
-    position: absolute;
-    top: 428px;
-    left: 534px;
-}
+    .red-dots--gipo-position {
+        top: 428px;
+        left: 534px;
+    }
 
-#summitCD {
-    position: absolute;
-    top: 529px;
-    left: 731px;
-}
+    .red-dots--cd-position {
+        top: 529px;
+        left: 731px;
+    }
 
-#summitHbA1c {
-    position: absolute;
-    top: 278px;
-    left: 830px;
-}
-  
-#summitCC {
-    position: absolute;
-    top: 512px;
-    left: 1069px;
-}
+    .red-dots--hbA1c-position {
+        top: 278px;
+        left: 830px;
+    }
+      
+    .red-dots--cc-position {
+        top: 512px;
+        left: 1069px;
+    }
 }
 
 
  
 /* styles for 3 white/orange dots to the right */
-/* positioning */
-#rightSlideChanger {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-    top: 47vh;
-    left: 163vh;
-    /* text-align: center; */
+.right-slider {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+/* positioning for Ipad screen*/
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 1) {
+  .right-slider {
+    top: 380px;
+    left: 980px;
+  }
 }
 
+/* positioning for Laptop screen*/
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    .right-slider {
+      top: 350px;
+      left: 1230px;
+    }
+  }
+
+
+
 /*styles to create dots */
-.slideChangeDots {
+.right-slider__dots {
     box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.66);
     border-radius: 50%;
     margin: 0.2vh;
 }
 
 /* adding color size and transitioning color when scrolling */
-.dotWhite {
+.right-slider__dots--white {
     height: 17px;
     width: 17px;
     background-color: #ffffff;
 }
 
-.dotOrange {
+.right-slider__dots--orange {
     transition: 0.3s background-color;
     background-color: #f78b1f;
 }
@@ -179,7 +191,7 @@ a:hover {
 }
 
 /* styles for the last section with Horizontal slider starts here */
-.sliderWrap {
+.section-x__wrapper {
     width: 1024px;
     height: 100vh;
     margin: 0 auto;
@@ -187,18 +199,18 @@ a:hover {
   }
 
 
-  .slider::-webkit-scrollbar {
+  .section-x__wrapper__slider::-webkit-scrollbar {
     display: none;
 }
 
-  .slider {
+  .section-x__wrapper__slider {
     overflow-x: scroll;
   }
-  .holder {
+  .section-x__wrapper__slider__holder {
     width: 300%;
   }
 
-  .slide {
+  .holder__slide {
     float: left;
     width: 1024px;
     height: 100vh;
@@ -207,16 +219,16 @@ a:hover {
   }
  
 /* slides images used as backgrounds to divs */
-  #slide0 {
+  .holder__slide--url-0 {
     background: url(/onpointTask/src/imgs/slide3/slide3-1024.jpg) center center no-repeat;
   }
-  #slide1 {
+  .holder__slide--url-1 {
     background: url(/onpointTask/src/imgs/slide4/slide4-1024.jpg) center center no-repeat;
   }
-  #slide2 {
+  .holder__slide--url-2 {
     background: url(/onpointTask/src/imgs/slide5/slide5-1024.jpg) center center no-repeat;
   }
-  .slide:before {
+  .holder__slide:before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -227,12 +239,12 @@ a:hover {
   }
 
   /* don't show the navigation lniks but we use them with input range */
-  .sliderNav {
+  .section-x__slider-nav {
     display: none;
   }
 
   /* use our own style for slider line */
-  #rangeSlider{
+  .section-x__wrapper__input{
     z-index: 9;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -246,7 +258,7 @@ a:hover {
   }
 
   /* use our own picture and styling for range slider Thumb */
-  #rangeSlider::-webkit-slider-thumb {
+  .section-x__wrapper__input::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 45px;
     height: 58px;
@@ -255,7 +267,7 @@ a:hover {
 }
 
 /* styles for range slider labels and their  */
-.inputLabels {
+.section-x__wrapper__labels {
     color: #ffffff;
     font-size: 25px;
     font-weight: 400;

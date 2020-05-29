@@ -1,5 +1,5 @@
 //change color when scroll for navigation dots via adding or removing "orangeDot" class
-let slideChangeLinks = document.querySelectorAll("#rightSlideChanger a");
+let slideChangeLinks = document.querySelectorAll(".right-slider a");
 
 window.addEventListener("scroll", e => {
     let distanceFromTop = window.scrollY;
@@ -7,8 +7,8 @@ window.addEventListener("scroll", e => {
         let section = document.querySelector(el.hash);
 
         section.offsetTop <= distanceFromTop && section.offsetTop + section.offsetHeight > distanceFromTop
-            ? el.classList.add("dotOrange")
-            : el.classList.remove("dotOrange");
+            ? el.classList.add("right-slider__dots--orange")
+            : el.classList.remove("right-slider__dots--orange");
 
     });
 });
@@ -53,7 +53,7 @@ document.querySelectorAll('a').forEach(anchor => {
 let section1 = document.querySelector('#btn1');
 let section2 = document.querySelector('#btn2');
 
-let rangeSlider = document.querySelector('#rangeSlider');
+let rangeSlider = document.querySelector('.section-x__wrapper__input');
 
 // add click event listeners to buttons at the bottom of section 1 and 3 and starts smoothScroll on click 
 section1.addEventListener('click', function () {
@@ -61,14 +61,14 @@ section1.addEventListener('click', function () {
 });
 
 section2.addEventListener('click', function () {
-    smoothScrool('.sectionX', 1000);
+    smoothScrool('.section-x', 1000);
 });
 
-// clicks anchor links to a slide on sectionX according to the Number input on range slider
+// clicks anchor links to a slide on section-x according to the Number input on range slider
 let rangeClicker = (num) => {
-    let slide1 = document.querySelector('#sliderNav0');
-    let slide2 = document.querySelector('#sliderNav1');
-    let slide3 = document.querySelector('#sliderNav2');
+    let slide1 = document.querySelector('.section-x__slider-nav__link-0');
+    let slide2 = document.querySelector('.section-x__slider-nav__link-1');
+    let slide3 = document.querySelector('.section-x__slider-nav__link-2');
 
     if (Number(num) >= 0 && Number(num) <= 5) slide1.click();
     if (Number(num) >= 12 && Number(num) <= 17) slide2.click();

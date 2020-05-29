@@ -9,20 +9,25 @@
 </head>
 
 <body>
+    <!-- white anchor dots on right/ they change to orange when page scrolls down/up to a certain section -->
     <nav id="rightSlideChanger">
         <a class="slideChangeDots dotWhite dotOrange" href="#section1"></a>
         <a class="slideChangeDots dotWhite" href="#section2"></a>
-        <a class="slideChangeDots dotWhite" href="#slide-x"></a>
+        <a class="slideChangeDots dotWhite" href="#sectionX"></a>
     </nav>
+
+    <!-- section one with iceberg and animated red dots -->
     <section class="section1" id="section1">
 
+        <!-- box containig the image of the first slide and image with the button after clicking which you are sent to section two  -->
         <div class="box1">
-
             <img src="./src/imgs/slide1/slide1-1024.jpg" alt="slide #1">
-            <div class="btn1">
-                <img src="./src/imgs/slide1/downBtn.png" alt="button to go down">
+            <div class="btn" id="btn1">
+                <img src="./src/imgs/slide1/downBtn.png" alt="button to go to section 2">
             </div>
         </div>
+
+        <!-- red animated dots on tops of each of four peaks -->
         <div id="redDots">
             <span id="summitGipo" class="dot"></span>
             <span id="summitCD" class="dot"></span>
@@ -31,39 +36,54 @@
         </div>
 
     </section>
+
+    <!-- section two with bottom of the iceberg -->
     <section class="section2" id="section2">
+
+        <!-- box two which contains the second slide and with the button after clicking which you are sent to section three -->
         <div class="box2">
             <img src="./src/imgs/slide2/slide2-1024.jpg" alt="slide #2">
-            <div class="btn2">
+            <div class="btn" id="btn2">
                 <img src="./src/imgs/slide2/downBtn.png" alt="button to go down">
             </div>
         </div>
-
     </section>
-    <section class="slide-x" id="slide-x">
 
+    <!-- section three which contains a horizontal slider with three more slides. These slides can be directed to by range input slider insede this section -->
+    <section class="sectionX" id="sectionX">
 
-        <div class="slider-wrap">
+        <!-- slider div with slides, input, and labels -->
+        <div class="sliderWrap">
+
+            <!-- range input to control the slides -->
             <input type="range" id="rangeSlider" min='0' max="30" step="1" value="30">
-            <div class="input-labels">
+
+            <!-- labels for the slider -->
+            <div class="inputLabels">
                 <span>1998</span>
                 <span>2009</span>
                 <span>2016</span>
             </div>
+
+            <!-- horizontal slider which contains the divs with slides -->
             <div class="slider" id="slider">
                 <div class="holder">
-                    <div class="slide" id="slide-0"></div>
-                    <div class="slide" id="slide-1"></div>
-                    <div class="slide" id="slide-2"></div>
+                    <div class="slide" id="slide0"></div>
+                    <div class="slide" id="slide1"></div>
+                    <div class="slide" id="slide2"></div>
                 </div>
             </div>
 
         </div>
-        <nav class="slider-nav">
-            <a id="slider-nav-0" href="#slide-0">Slide 0</a>
-            <a id="slider-nav-1" href="#slide-1">Slide 1</a>
-            <a id="slider-nav-2" href="#slide-2">Slide 2</a>
+
+        <!-- navigation liks to the last three slides. They cannot be seen  but they are clicked with the help of JavaScript
+             when the range input changed to a particular position-->
+        <nav class="sliderNav">
+            <a id="sliderNav0" href="#slide0">Slide 0</a>
+            <a id="sliderNav1" href="#slide1">Slide 1</a>
+            <a id="sliderNav2" href="#slide2">Slide 2</a>
         </nav>
+
     </section>
 
     <script src="./src/js/script.js"></script>

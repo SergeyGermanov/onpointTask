@@ -1,32 +1,28 @@
-//change color when scroll for navigation dots
-let mainNavLinks = document.querySelectorAll("#rightSlideChanger a");
+//change color when scroll for navigation dots via adding or removing "orangeDot" class
+let slideChangeLinks = document.querySelectorAll("#rightSlideChanger a");
 
+window.addEventListener("scroll", e => {
+    let distanceFromTop = window.scrollY;
+    slideChangeLinks.forEach(el => {
+        let section = document.querySelector(el.hash);
 
-window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-    mainNavLinks.forEach(link => {
-        let section = document.querySelector(link.hash);
+        section.offsetTop <= distanceFromTop && section.offsetTop + section.offsetHeight > distanceFromTop
+            ? el.classList.add("dotOrange")
+            : el.classList.remove("dotOrange");
 
-        if (
-            section.offsetTop <= fromTop &&
-            section.offsetTop + section.offsetHeight > fromTop
-        ) {
-
-            link.classList.add("dotOrange");
-        } else {
-            link.classList.remove("dotOrange");
-        }
     });
 });
 
-function smoothScrool(targetId, duration) {
+//make smooth scroll to next full screen when a button pressed
+let smoothScrool = (targetId, duration) => {
     let target = document.querySelector(targetId);
     let targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
     let startPosition = window.pageYOffset;
     let distance = targetPosition - startPosition;
     let startTime = null;
 
-    function animation(currentTime) {
+    //start the animation
+    let animation = (currentTime) => {
         if (startTime === null) startTime = currentTime;
         let timeElapsed = currentTime - startTime;
         let run = ease(timeElapsed, startPosition, distance, duration);
@@ -34,61 +30,53 @@ function smoothScrool(targetId, duration) {
         if (timeElapsed < duration) requestAnimationFrame(animation);
     }
 
-    function ease(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t * t + b;
-        t -= 2;
-        return c / 2 * (t * t * t + 2) + b;
+    //ease animation effect in place
+    let ease = (time, position, distance, duration) => {
+        time /= duration / 2;
+        if (time < 1) return distance / 2 * time * time * time + position;
+        time -= 2;
+        return distance / 2 * (time * time * time + 2) + position;
     }
-
     requestAnimationFrame(animation);
 }
 
-// add smoothness to going to anchor
+// add smoothness when we press a link directed to parts of a page 
 document.querySelectorAll('a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
+let section1 = document.querySelector('#btn1');
+let section2 = document.querySelector('#btn2');
 
-let section1 = document.querySelector('.btn1');
-let section2 = document.querySelector('.btn2');
-let section3 = document.querySelector('.btn3');
+let rangeSlider = document.querySelector('#rangeSlider');
 
+// add click event listeners to buttons at the bottom of section 1 and 3 and starts smoothScroll on click 
 section1.addEventListener('click', function () {
     smoothScrool('.section2', 1000);
-
-
 });
 
 section2.addEventListener('click', function () {
-    smoothScrool('.slide-x', 1000);
+    smoothScrool('.sectionX', 1000);
 });
 
-function rangeClicker(num) {
-    let slide1 = document.querySelector('#slider-nav-0');
-    let slide2 = document.querySelector('#slider-nav-1');
-    let slide3 = document.querySelector('#slider-nav-2');
+// clicks anchor links to a slide on sectionX according to the Number input on range slider
+let rangeClicker = (num) => {
+    let slide1 = document.querySelector('#sliderNav0');
+    let slide2 = document.querySelector('#sliderNav1');
+    let slide3 = document.querySelector('#sliderNav2');
 
-    if (Number(num) >= 0 && Number(num) <= 5) {
-        slide1.click();
-    }
-    if (Number(num) >= 12 && Number(num) <= 17) {
-        slide2.click();
-    }
-    if (Number(num) >= 25 && Number(num) <= 30) {
-        slide3.click();
-    }
+    if (Number(num) >= 0 && Number(num) <= 5) slide1.click();
+    if (Number(num) >= 12 && Number(num) <= 17) slide2.click();
+    if (Number(num) >= 25 && Number(num) <= 30) slide3.click();
 }
 
-document.querySelector('#rangeSlider').addEventListener('change', (e) => {
-
-
+//add event listener to the range slider input to change slides according to the position
+rangeSlider.addEventListener('change', (e) => {
     rangeClicker(e.target.value);
 });
 

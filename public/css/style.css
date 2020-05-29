@@ -111,7 +111,7 @@ body {
   and (-webkit-min-device-pixel-ratio: 1) { 
 
     .red-dots--gipo-position {
-        top: 428px;
+        top: 450px;
         left: 534px;
     }
 
@@ -220,13 +220,13 @@ a:hover {
  
 /* slides images used as backgrounds to divs */
   .holder__slide--url-0 {
-    background: url(/onpointTask/src/imgs/slide3/slide3-1024.jpg) center center no-repeat;
+    background: url(../imgs/slide3/slide3-1024.jpg) center center no-repeat;
   }
   .holder__slide--url-1 {
-    background: url(/onpointTask/src/imgs/slide4/slide4-1024.jpg) center center no-repeat;
+    background: url(../imgs/slide4/slide4-1024.jpg) center center no-repeat;
   }
   .holder__slide--url-2 {
-    background: url(/onpointTask/src/imgs/slide5/slide5-1024.jpg) center center no-repeat;
+    background: url(../imgs/slide5/slide5-1024.jpg) center center no-repeat;
   }
   .holder__slide:before {
     content: "";
@@ -262,7 +262,7 @@ a:hover {
     -webkit-appearance: none;
     width: 45px;
     height: 58px;
-    background: url(/onpointTask/src/imgs/slide3/rangeSliderThumb.png) no-repeat;
+    background: url(../imgs/slide3/rangeSliderThumb.png) no-repeat;
     cursor: pointer;
 }
 

@@ -19,5 +19,5 @@
 Visual Studio Code was used as an IDE.
 
 Here you can see the results:
-![Screenshot of the result](https://github.com/SergeyGermanov/onpointTask/blob/master/slider-1.jpg?raw=true)
-![Screenshot of the result](https://github.com/SergeyGermanov/onpointTask/blob/master/slider-2.jpg?raw=true)
+![Screenshot of the result](https://github.com/SergeyGermanov/onpointTask/blob/master/public/imgs/screenshots/slider-1.JPG?raw=true)
+![Screenshot of the result](https://github.com/SergeyGermanov/onpointTask/blob/master/public/imgs/screenshots/slider-2.JPG?raw=true)

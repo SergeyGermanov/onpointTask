@@ -4,6 +4,9 @@ body {
     padding: 0;
 }
 
+
+
+
 /* contaner for slides 1 and 2 styles */
 .box1, .box2{ 
     height: 100vh;
@@ -44,55 +47,99 @@ body {
 }
 
 /* styles for the animated red dots on the first slide */
+
 .dot {
-    position: absolute;
-    height: 5px;
-    width: 5px;
-    background-color: rgba(219, 107, 107, 0.747);
-    border-radius: 50%;
-    border: crimson solid 1px;
-    display: inline-block;
-    animation: growCircles 1s infinite;
-  }
-
-  /* animation instructions for red dots */
-  @keyframes growCircles{
-      from {
-          transform: scale(0);
-           }
-      to {
-        transform: scale(3);  
-        }
-  }
-
-.dot:hover {
-    cursor: pointer;
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background-color: rgba(219, 107, 107, 0.747);
+  border-radius: 50%;
+  border: crimson solid 1px;
+  display: inline-block;
+  animation: growCircles 1s infinite;
 }
 
+/* animation instructions for red dots */
+@keyframes growCircles{
+    from {
+        transform: scale(0);
+         }
+    to {
+      transform: scale(3);  
+      }
+}
+
+.dot:hover {
+  cursor: pointer;
+}
+
+
 /* postitioning of red dot to the peaks on the first slide */
-#summitGipo {
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+   
+  #summitGipo {
     position: absolute;
-    top: 400px;
-    left: 549px;
+    top: 435px;
+    left: 283px;
 }
 
 #summitCD {
     position: absolute;
-    top: 495px;
-    left: 735px;
+    top: 540px;
+    left: 482px;
 }
 
 #summitHbA1c {
     position: absolute;
-    top: 260px;
-    left: 825px;
+    top: 280px;
+    left: 585px;
 }
   
 #summitCC {
     position: absolute;
-    top: 478px;
-    left: 1048px;
+    top: 520px;
+    left: 826px;
 }
+}
+
+ 
+
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+
+   
+  #summitGipo {
+    position: absolute;
+    top: 428px;
+    left: 534px;
+}
+
+#summitCD {
+    position: absolute;
+    top: 529px;
+    left: 731px;
+}
+
+#summitHbA1c {
+    position: absolute;
+    top: 278px;
+    left: 830px;
+}
+  
+#summitCC {
+    position: absolute;
+    top: 512px;
+    left: 1069px;
+}
+}
+
+
  
 /* styles for 3 white/orange dots to the right */
 /* positioning */
@@ -103,7 +150,7 @@ body {
     z-index: 10;
     top: 47vh;
     left: 163vh;
-    text-align: center;
+    /* text-align: center; */
 }
 
 /*styles to create dots */
@@ -188,7 +235,6 @@ a:hover {
   #rangeSlider{
     z-index: 9;
     position: absolute;
-    bottom: 10vh;
     transform: translate(-50%, -50%);
     left: 50%;
     bottom: 9vh;
@@ -196,8 +242,7 @@ a:hover {
     width: 800px;
     height: 4px;
     padding: 5px;
-    background-color: #97bcda;
-    position: absolute;
+    background-color: #97bcda;  
   }
 
   /* use our own picture and styling for range slider Thumb */

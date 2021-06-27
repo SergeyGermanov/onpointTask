@@ -11,7 +11,6 @@
         - path;
         - express;
 
-- #### babel(ES6, ES7, ES8)
 - #### Vanilla JS
 - #### BEM naming convention
 - #### Git (Git BASH terminal)
